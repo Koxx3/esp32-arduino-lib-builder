@@ -1,13 +1,7 @@
 #!/bin/bash
 source ./tools/config.sh
 
-if [ -z $ESP32_ARDUINO ]; then
-    if [[ "$AR_OS" == "macos" ]]; then
-    	ESP32_ARDUINO="$HOME/Documents/Arduino/hardware/espressif/esp32"
-    else
-    	ESP32_ARDUINO="$HOME/Arduino/hardware/espressif/esp32"
-    fi
-fi
+ESP32_ARDUINO=/storage_sec/esp32-arduino-lib-builder/arduino-esp32/
 
 if ! [ -d "$ESP32_ARDUINO" ]; then
 	echo "ERROR: Target arduino folder does not exist!"
